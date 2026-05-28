@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Sherlock-X | Cyber Forensic Intelligence</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Swiper CSS for testimonials -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0a0f1c;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --accent: #00e5ff;
+      --accent-glow: rgba(0, 229, 255, 0.3);
+      --card-bg: #111a28;
+      --border-dim: rgba(255, 255, 255, 0.08);
+      --dark-bg: #050b12;
+      --text-secondary: #cbd5e1;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .testimonials-section {
+      padding-bottom: 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--accent);
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    /* ========== NAVBAR ========== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(9, 15, 25, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 5%;
+      max-width: 1600px;
+      margin: auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-img {
+      height: 64px;
+      width: auto;
+      filter: drop-shadow(0 0 6px var(--accent));
+    }
+    .logo-text {
+      font-size: 1.6rem;
+      font-weight: 800;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--accent);
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #f1f5f9;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.03);
+      transition: 0.3s;
+      border: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 1.8rem;
+      color: var(--accent);
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    /* ========== HERO - FULL COVERAGE FIX ========== */
+    .hero {
+      height: 100vh;
+      min-height: 600px;
+      position: relative;
+      margin-top: 0;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .slides {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      animation: fadeSlider 18s infinite;
+    }
+
+    /* Fix for mobile: ensure background covers fully and doesn't crop */
+    @media (max-width: 768px) {
+      .slide {
+        background-size: cover;
+        background-position: center 30%;
+      }
+      .hero {
+        min-height: 100vh;
+        height: 100vh;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .slide {
+        background-size: cover;
+        background-position: center 40%;
+      }
+    }
+
+    .slide:nth-child(1) {
+      background-image: url('https://i.pinimg.com/736x/eb/ad/db/ebaddb5360045167c1becdc27be7cf07.jpg');
+      animation-delay: 0s;
+    }
+    .slide:nth-child(2) {
+      background-image: url('https://i.pinimg.com/1200x/8d/db/12/8ddb12b943246f4538aefbff75fb3f83.jpg');
+      animation-delay: 6s;
+    }
+    .slide:nth-child(3) {
+      background-image: url('https://i.pinimg.com/1200x/b3/e8/b1/b3e8b149cf69d1497f7c9f27f50fef70.jpg');
+      animation-delay: 12s;
+    }
+
+    @keyframes fadeSlider {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      30% { opacity: 1; }
+      40% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(125deg, rgba(0, 0, 0, 0.85) 30%, rgba(0, 30, 40, 0.6));
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      left: 6%;
+      transform: translateY(-50%);
+      max-width: 700px;
+      padding-right: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      font-family: 'Orbitron', sans-serif;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero-content h1 span {
+      color: var(--accent);
+      text-shadow: 0 0 12px var(--accent);
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #e2e8f0;
+      margin-bottom: 35px;
+    }
+    .btn {
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: 0.3s;
+      border: none;
+    }
+    .primary-btn {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
+    }
+    .primary-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px var(--accent);
+    }
+    .secondary-btn {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: white;
+    }
+    .secondary-btn:hover {
+      background: var(--accent);
+      color: #000;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* ticker */
+    .ticker {
+      background: #050d17;
+      border-top: 1px solid var(--border-dim);
+      border-bottom: 1px solid var(--border-dim);
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 14px 0;
+    }
+    .ticker-track {
+      display: inline-block;
+      animation: scrollTicker 24s linear infinite;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 2px;
+    }
+    @keyframes scrollTicker {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ========== HOW WE INVESTIGATE ========== */
+    .process-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .process-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-dim);
+      border-radius: 28px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 360px;
+      transition: 0.35s ease;
+    }
+    .process-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 35px -12px rgba(0, 229, 255, 0.2);
+    }
+    .process-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 2px solid rgba(0,229,255,0.3);
+    }
+    .process-card-content {
+      padding: 28px 24px 32px;
+      text-align: center;
+    }
+    .process-icon {
+      font-size: 2.6rem;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    .process-card h3 {
+      font-size: 1.7rem;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 12px;
+    }
+    .process-card p {
+      color: #b9c3d4;
+      line-height: 1.6;
+    }
+
+    /* FEATURES SCROLL */
+    .feature-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 25px;
+      padding-bottom: 20px;
+      scroll-snap-type: x mandatory;
+    }
+    .feature-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+    .feature-scroll::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 10px;
+    }
+    .feature-card {
+      min-width: 300px;
+      background: #0f1823;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      scroll-snap-align: start;
+      transition: 0.3s;
+      border: 1px solid var(--border-dim);
+    }
+    .feature-card:hover {
+      transform: scale(1.02);
+      border-color: var(--accent);
+    }
+    .feature-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, #000000cc, transparent);
+    }
+    .card-content {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+    .card-content h3 {
+      font-size: 1.4rem;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .about-text h2 {
+      font-size: 2.8rem;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .about-image img {
+      width: 100%;
+      border-radius: 30px;
+      border: 1px solid var(--border-dim);
+      box-shadow: 0 20px 30px -15px black;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-section {
+      background: linear-gradient(145deg, #0a0f1c, #0c1320);
+      padding-bottom: 40px;
+    }
+    .testimonial-slide {
+      background: var(--card-bg);
+      border-radius: 28px;
+      padding: 40px 35px;
+      border: 1px solid var(--border-dim);
+      text-align: center;
+      transition: 0.3s;
+      margin: 15px 10px;
+    }
+    .testimonial-slide:hover {
+      border-color: var(--accent);
+      box-shadow: 0 15px 35px rgba(0, 229, 255, 0.1);
+    }
+    .client-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      margin-bottom: 20px;
+    }
+    .client-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--accent);
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 5px;
+    }
+    .client-title {
+      font-size: 0.85rem;
+      color: #8e9eb5;
+      margin-bottom: 20px;
+    }
+    .client-feedback {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #e2e8f0;
+      font-style: italic;
+    }
+    .rating {
+      color: #ffb84d;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+    .swiper-pagination-bullet-active {
+      background: var(--accent) !important;
+    }
+
+    /* CONSULTATION SECTION */
+    .consultation-showcase {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin: 30px 0 60px;
+      flex-wrap: wrap;
+    }
+    .consultation-image {
+      flex: 1;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid var(--border-dim);
+      box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5);
+    }
+    .consultation-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: 0.5s;
+    }
+    .consultation-image:hover img {
+      transform: scale(1.02);
+    }
+    .consultation-text {
+      flex: 1.2;
+    }
+    .consultation-text h2 {
+      font-size: 2.2rem;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .consultation-text p {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+    .btn-outline-accent {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: white;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+    .btn-outline-accent:hover {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 0 15px var(--accent);
+    }
+
+    /* CONTACT CARD */
+    .contact-card {
+      background: var(--card-bg);
+      border-radius: 30px;
+      padding: 45px 40px;
+      border: 1px solid var(--border-dim);
+      text-align: center;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #03070f;
+      border-top: 1px solid rgba(0, 229, 255, 0.2);
+      padding: 60px 0 30px;
+      margin-top: 20px;
+    }
+    .footer-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+    .footer-col h4 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--accent);
+      margin-bottom: 22px;
+      font-size: 1.3rem;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col li, .footer-col p {
+      margin-bottom: 12px;
+      color: #a0afc3;
+      font-size: 0.9rem;
+    }
+    .footer-col i {
+      width: 28px;
+      color: var(--accent);
+    }
+    .footer-col .social-links {
+      display: flex;
+      gap: 18px;
+      margin-top: 15px;
+    }
+    .social-links a {
+      color: #cbd5e6;
+      font-size: 1.6rem;
+      transition: 0.3s;
+    }
+    .social-links a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 40px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+      color: #7e8aa2;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .about-grid { grid-template-columns: 1fr; gap: 35px; }
+      .hero-content h1 { font-size: 3rem; }
+      .section-title h2 { font-size: 2rem; }
+      .consultation-showcase { flex-direction: column; gap: 40px; }
+      .consultation-image { width: 100%; order: 1; }
+      .consultation-text { order: 2; text-align: center; }
+    }
+
+    @media (max-width: 768px) {
+      .hero { 
+        height: 100vh;
+        min-height: 100vh;
+      }
+      .hero-content { 
+        left: 10%; 
+        top: 55%; 
+        width: 100%;
+        transform: translateY(-50%);
+      }
+      .hero-content h1 { font-size: 2.2rem; }
+      .hero-content p { font-size: 0.95rem; }
+      .btn { padding: 10px 20px; font-size: 0.85rem; }
+      .menu-btn { display: block; }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: rgba(10, 18, 28, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        transition: right 0.3s ease-in-out;
+        z-index: 1050;
+        border-left: 1px solid var(--accent);
+      }
+      .nav-links.active { right: 0; }
+      .nav-links li { width: 100%; text-align: center; }
+      .nav-links a { width: 80%; margin: 0 auto; padding: 12px; background: rgba(0, 229, 255, 0.1); }
+      .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        z-index: 1040;
+        display: none;
+      }
+      .menu-overlay.active { display: block; }
+      .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; }
+      .testimonial-slide { padding: 30px 20px; }
+      .consultation-text h2 { font-size: 1.8rem; }
+    }
+
+    @media (max-width: 550px) {
+      .footer-container { grid-template-columns: 1fr; text-align: center; }
+      .social-links { justify-content: center; }
+      .feature-card { min-width: 260px; }
+      .logo-text { font-size: 1.2rem; }
+      .logo-img { height: 34px; }
+      .hero-content h1 { font-size: 1.8rem; }
+      .hero-content p { font-size: 0.85rem; }
+      .hero-btns { gap: 12px; }
+    }
+    a { text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">
+      <img class="logo-img" src="img/seclogo.png" alt="Sherlock-X Logo" onerror="this.src='https://placehold.co/60x60/00e5ff/111?text=SX';">
+      <span class="logo-text">Case Vison</span>
+    </div>
+    <button class="menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="how.html">How We Investigate</a></li>
+      <li><a href="contactUs.html">Contact</a></li>
+      <li><a href="newfaq.html">FAQ</a></li>
+    </ul>
+  </nav>
+  <div id="menuOverlay" class="menu-overlay"></div>
+</header>
+
+<!-- HERO - FULL COVERAGE FIXED -->
+<section class="hero">
+  <div class="slides">
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+  </div>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Digital <span>Investigation</span><br> & Crime Analytics</h1>
+    <p>Advanced forensic intelligence system for cyber investigations, crime scene analytics, evidence management, and real-time surveillance with next-gen AI.</p>
+    <div class="hero-btns">
+      <button class="btn primary-btn">Start Investigation</button>
+      <button class="btn secondary-btn">Explore Features</button>
+    </div>
+  </div>
+</section>
+
+<div class="ticker"><div class="ticker-track">• CRIME DETECTION • DIGITAL FORENSICS • EVIDENCE TRACKING • FINGERPRINT ANALYSIS • CYBER SECURITY MONITORING • SMART INVESTIGATION • CRIME SCENE INTELLIGENCE • FACIAL RECOGNITION • LIVE SURVEILLANCE • </div></div>
+
+<!-- HOW WE INVESTIGATE -->
+<section id="process" style="padding-top: 60px;">
+  <div class="container">
+    <div class="section-title"><h2>How We Investigate</h2><p>Proven methodology — from intelligence to resolution</p></div>
+    <div class="process-grid">
+      <div class="process-card"><img class="process-img" src="https://i.pinimg.com/736x/37/b5/56/37b55645e1e67de77d94a53f5b5122e6.jpg" alt="intel"><div class="process-card-content"><div class="process-icon"><i class="fas fa-search-location"></i></div><h3>01. Deep Intel</h3><p>Gathering OSINT, digital footprint mapping, and advanced background profiling to uncover hidden connections.</p></div></div>
+      <div class="process-card"><img class="process-img" src="https://images.stockcake.com/public/d/0/4/d04b85c9-2bc7-4904-9863-2630a68882af_large/investigation-web-unveiled-stockcake.jpg" alt="forensic"><div class="process-card-content"><div class="process-icon"><i class="fas fa-microchip"></i></div><h3>02. Analysis</h3><p>State-of-the-art digital forensics, memory dumps, decryption, and evidence reconstruction from any device.</p></div></div>
+      <div class="process-card"><img class="process-img" src="https://i.pinimg.com/736x/0a/76/1f/0a761f7815a1df167c18de5b20a2e4f5.jpg" alt="report"><div class="process-card-content"><div class="process-icon"><i class="fas fa-chart-line"></i></div><h3>03. Intelligence Report</h3><p>Actionable insights, real-time dashboards, chain-of-custody logs, and confidential case delivery.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" style="padding-top: 20px;">
+  <div class="container">
+    <div class="section-title"><h2>Investigation Features</h2><p>Advanced tools for forensic analysis</p></div>
+    <div class="feature-scroll">
+      <div class="feature-card"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200"><div class="card-overlay"></div><div class="card-content"><h3>Digital Evidence Tracking</h3><p>Secure chain-of-custody.</p></div></div>
+      <div class="feature-card"><img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200"><div class="card-overlay"></div><div class="card-content"><h3>Cyber Crime Analysis</h3><p>AI threat detection.</p></div></div>
+      <div class="feature-card"><img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=1200"><div class="card-overlay"></div><div class="card-content"><h3>Fingerprint Detection</h3><p>Biometric AFIS.</p></div></div>
+      <div class="feature-card"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200"><div class="card-overlay"></div><div class="card-content"><h3>Case Intelligence</h3><p>Organize suspects & reports.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-text"><h2>Expert Investigation Technology</h2><p>Our forensic intelligence platform combines advanced analytics, AI-powered detection systems, and scientific investigation methods to solve complex criminal cases efficiently.</p><p>Designed for modern investigators with real-time evidence management and secure reporting.</p><button class="btn primary-btn">Schedule Meeting</button></div>
+    <div class="about-image"><img src="https://i.pinimg.com/1200x/24/c2/56/24c256db9dea20a334c4d94bfba4c120.jpg" alt="forensic lab"></div>
+  </div>
+</section>
+
+<!-- CLIENT FEEDBACKS SECTION -->
+<section id="testimonials" class="testimonials-section" style="padding: 80px 0 40px 0;">
+  <div class="container">
+    <div class="section-title"><h2>Client Feedback</h2><p>What our partners say about Sherlock-X</p></div>
+    <div class="swiper testimonialSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><div class="testimonial-slide"><img class="client-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="client"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="client-name">Eleanor Pierce</div><div class="client-title">Cyber Security Director, SecureNet</div><p class="client-feedback">“Sherlock-X transformed our investigative workflow. The AI forensics module reduced case resolution time by 47%. Absolute game-changer.”</p></div></div>
+        <div class="swiper-slide"><div class="testimonial-slide"><img class="client-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="client"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="client-name">Marcus Chen</div><div class="client-title">Lead Investigator, Global Risk Group</div><p class="client-feedback">“The digital tracing and OSINT capabilities are unmatched. Real-time intelligence reports gave us critical evidence within hours.”</p></div></div>
+        <div class="swiper-slide"><div class="testimonial-slide"><img class="client-avatar" src="https://randomuser.me/api/portraits/women/45.jpg" alt="client"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="client-name">Dr. Sophia Laurent</div><div class="client-title">Forensic Lab Director</div><p class="client-feedback">“The evidence chain-of-custody module is bulletproof. Perfect for compliance-heavy investigations. Highly recommend.”</p></div></div>
+        <div class="swiper-slide"><div class="testimonial-slide"><img class="client-avatar" src="https://randomuser.me/api/portraits/men/91.jpg" alt="client"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><div class="client-name">James O'Connor</div><div class="client-title">Private Security Consultant</div><p class="client-feedback">“Excellent support, secure platform and the surveillance tools are cutting-edge. A must-have for corporate investigations.”</p></div></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTATION SECTION -->
+<div class="container">
+  <div class="consultation-showcase">
+    <div class="consultation-image">
+      <img src="https://i.pinimg.com/1200x/7a/69/4e/7a694ee045fa319a635905cac0cc6b1d.jpg" alt="forensic consultation" onerror="this.src='https://placehold.co/800x500/111a28/00e5ff?text=Book+Consultation'">
+    </div>
+    <div class="consultation-text">
+      <h2>Strategic Forensic Consultation</h2>
+      <p>Our senior intelligence analysts offer bespoke forensic assessments for corporations, legal teams, and private clients. From dark web monitoring to financial crime reconstruction — we translate complex data into actionable evidence. Book a confidential session to map out your investigative roadmap.</p>
+      <a href="contactUs.html" class="btn-outline-accent"><i class="fas fa-calendar-check"></i> Book your consultation now</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section id="contact" style="padding-top: 0;">
+  <div class="container">
+    <div class="contact-card">
+      <h2 style="color: var(--accent); font-family: 'Orbitron';">Contact Investigation Team</h2>
+      <p>Need digital forensic support? Contact our expert team 24/7.</p>
+      <a href="contactUs.html" class="btn primary-btn" style="margin-top: 20px; display: inline-block;">Contact Us <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-col"><h4>Company</h4><ul><li><i class="fas fa-building"></i> About Us</li><li><i class="fas fa-cogs"></i> Services</li><li><i class="fas fa-envelope"></i> Contact</li><li><i class="fas fa-gavel"></i> Legal Notice</li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><i class="fas fa-eye"></i> Surveillance & Fieldwork</li><li><i class="fas fa-search"></i> Digital Tracing</li><li><i class="fas fa-user-check"></i> Background Checks</li><li><i class="fas fa-briefcase"></i> Corporate Investigations</li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><i class="fas fa-file-alt"></i> Case Report Samples</li><li><i class="fas fa-upload"></i> Client Intake Forms</li><li><i class="fas fa-shield-alt"></i> Confidentiality Policy</li><li><i class="fas fa-blog"></i> Investigation Blog</li></ul></div>
+    <div class="footer-col"><h4>Follow Us</h4><div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-rocketchat"></i></a><a href="#"><i class="fas fa-newspaper"></i></a></div><p><i class="fas fa-lock"></i> Secure Chat: encrypted.sherlock-x</p><p><i class="fas fa-envelope-open-text"></i> Newsletter: subscribe for intel</p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 SHERLOCK-X Investigation Platform | Modern Forensic & Crime Scene Technology</p></div>
+</footer>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const navLinks = document.getElementById('navLinks');
+  const overlayMenu = document.getElementById('menuOverlay');
+  function toggleMenu() { navLinks.classList.toggle('active'); overlayMenu.classList.toggle('active'); document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : ''; }
+  if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
+  if(overlayMenu) overlayMenu.addEventListener('click', toggleMenu);
+  document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => { if(navLinks.classList.contains('active')) toggleMenu(); }));
+
+  // Smooth anchor offset
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if(targetId === "#" || !targetId) return;
+      const target = document.querySelector(targetId);
+      if(target) { e.preventDefault(); const offset = 80; const elementPos = target.getBoundingClientRect().top + window.scrollY - offset; window.scrollTo({ top: elementPos, behavior: 'smooth' }); }
+    });
+  });
+
+  // Init Swiper for client feedbacks
+  const swiper = new Swiper('.testimonialSwiper', {
+    loop: true,
+    autoplay: { delay: 4500, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    breakpoints: { 640: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 2 } },
+    spaceBetween: 25,
+  });
+</script>
+</body>
+</html>
