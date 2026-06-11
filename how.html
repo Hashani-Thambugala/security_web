@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Sherlock-X | How We Investigate – Forensic Methodology</title>
+  <title>Tele Secure & Investigation | How We Investigate – Private Investigation Process Sri Lanka</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Professional Fonts: Inter + Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -21,45 +19,57 @@
       scroll-behavior: smooth;
     }
 
-    body {
-      background: #0a0f1c;
-      color: #ffffff;
-      font-family: 'Poppins', sans-serif;
-      overflow-x: hidden;
+    /* LIGHT THEME — PROFESSIONAL CORPORATE PALETTE */
+    :root {
+      --primary: #1e3a8a;        /* deep trustworthy blue */
+      --primary-dark: #0f2b6d;
+      --primary-light: #3b82f6;
+      --accent: #2563eb;          /* interactive accent */
+      --accent-glow: rgba(37, 99, 235, 0.12);
+      --card-bg: #ffffff;
+      --bg-light: #f8fafc;
+      --bg-offwhite: #f1f5f9;
+      --border-dim: #e2e8f0;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+      --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 16px 28px -10px rgba(0, 0, 0, 0.08);
     }
 
-    :root {
-      --accent: #00e5ff;
-      --accent-glow: rgba(0, 229, 255, 0.3);
-      --card-bg: #111a28;
-      --border-dim: rgba(255, 255, 255, 0.08);
-      --dark-bg: #050b12;
-      --text-secondary: #cbd5e1;
+    body {
+      background: var(--bg-light);
+      color: var(--text-primary);
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.5;
     }
 
     .container {
       width: 92%;
-      max-width: 1400px;
+      max-width: 1300px;
       margin: 0 auto;
     }
 
-    /* ========== NAVBAR (EXACT SAME AS ORIGINAL) ========== */
+    /* ========== NAVBAR - LIGHT PROFESSIONAL ========== */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(9, 15, 25, 0.95);
-      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-dim);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.02);
     }
 
     nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 5%;
+      padding: 14px 5%;
       max-width: 1600px;
       margin: auto;
     }
@@ -67,62 +77,61 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
     .logo-img {
-      height: 64px;
+      height: 44px;
       width: auto;
-      filter: drop-shadow(0 0 6px var(--accent));
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.05));
     }
     .logo-text {
-      font-size: 1.6rem;
+      font-size: 1.1rem;
       font-weight: 800;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
-      letter-spacing: 2px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--primary);
+      letter-spacing: -0.4px;
     }
 
     .nav-links {
       display: flex;
-      gap: 12px;
+      gap: 8px;
       list-style: none;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: #f1f5f9;
+      color: var(--text-primary);
       padding: 8px 20px;
       border-radius: 40px;
       font-weight: 500;
       font-size: 0.9rem;
-      background: rgba(255, 255, 255, 0.03);
-      transition: 0.3s;
+      transition: 0.2s;
+      background: transparent;
       border: 1px solid transparent;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: var(--accent);
-      color: #000;
-      border-color: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
+      background: var(--primary-light);
+      color: white;
+      border-color: var(--primary-light);
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
     }
 
     .menu-btn {
       display: none;
-      font-size: 1.8rem;
-      color: var(--accent);
+      font-size: 1.6rem;
+      color: var(--primary);
       background: none;
       border: none;
       cursor: pointer;
-      z-index: 1100;
     }
 
-    /* Process Hero */
+    /* Process Hero - Light Theme - Updated */
     .process-hero {
       margin-top: 80px;
-      background: linear-gradient(135deg, #0a0f1c 0%, #0c1625 100%);
-      padding: 80px 0 60px;
+      background: linear-gradient(105deg, #f1f5f9 0%, #ffffff 100%);
+      padding: 70px 0 55px;
       border-bottom: 1px solid var(--border-dim);
       position: relative;
       overflow: hidden;
@@ -130,11 +139,11 @@
     .process-hero::before {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+      top: -40%;
+      right: -15%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(37,99,235,0.04) 0%, transparent 70%);
       border-radius: 50%;
     }
     .process-hero-content {
@@ -145,137 +154,148 @@
       z-index: 2;
     }
     .process-hero-content h1 {
-      font-size: 3.5rem;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
-      margin-bottom: 20px;
-      letter-spacing: 2px;
+      font-size: 3rem;
+      font-weight: 800;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--primary);
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
     }
     .process-hero-content p {
-      color: #b0c4de;
-      font-size: 1.1rem;
-      line-height: 1.8;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      font-weight: 400;
     }
 
-    /* Methodology Timeline / Steps */
+    /* Methodology Steps - Light Cards - Updated for investigation process */
     .methodology-steps {
       margin: 70px 0 40px;
     }
     .step-item {
       display: flex;
-      gap: 40px;
-      margin-bottom: 60px;
+      gap: 32px;
+      margin-bottom: 48px;
       background: var(--card-bg);
-      border-radius: 30px;
+      border-radius: 28px;
       border: 1px solid var(--border-dim);
       overflow: hidden;
-      transition: 0.3s;
+      transition: 0.25s ease;
+      box-shadow: var(--shadow-sm);
     }
     .step-item:hover {
-      border-color: var(--accent);
-      transform: translateY(-5px);
-      box-shadow: 0 20px 35px -12px rgba(0,229,255,0.15);
+      border-color: var(--primary-light);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
     }
     .step-number {
-      background: linear-gradient(145deg, #00e5ff20, #0a1a2a);
-      min-width: 120px;
+      background: linear-gradient(145deg, #eef2ff, #ffffff);
+      min-width: 110px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3.5rem;
+      font-size: 3.2rem;
       font-weight: 800;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--primary);
       border-right: 1px solid var(--border-dim);
     }
     .step-content {
-      padding: 35px 35px 35px 0;
+      padding: 32px 32px 32px 0;
       flex: 1;
     }
     .step-content h3 {
-      font-size: 1.8rem;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
-      margin-bottom: 15px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
     }
     .step-content p {
       color: var(--text-secondary);
-      line-height: 1.8;
-      margin-bottom: 20px;
+      line-height: 1.65;
+      margin-bottom: 18px;
     }
     .step-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 15px;
+      gap: 10px;
+      margin-top: 12px;
     }
     .tag {
-      background: rgba(0, 229, 255, 0.08);
+      background: #eef2ff;
       padding: 5px 16px;
-      border-radius: 50px;
-      font-size: 0.75rem;
-      border: 1px solid rgba(0,229,255,0.2);
-      color: #b9e6ff;
+      border-radius: 40px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+      border: none;
+      letter-spacing: 0.2px;
     }
 
-    /* Tech & Tools Section */
+    /* Technology Section - Light - Updated with service tools */
     .tech-section {
-      background: linear-gradient(145deg, #0c1320, #0a0f1c);
-      border-radius: 30px;
-      padding: 60px 50px;
+      background: white;
+      border-radius: 28px;
+      padding: 52px 48px;
       margin: 50px 0;
       border: 1px solid var(--border-dim);
       text-align: center;
+      box-shadow: var(--shadow-sm);
     }
     .tech-section h2 {
-      font-size: 2.2rem;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
-      margin-bottom: 20px;
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--primary);
+      margin-bottom: 16px;
     }
     .tech-section p {
       color: var(--text-secondary);
-      max-width: 800px;
+      max-width: 700px;
       margin: 0 auto 30px;
-      line-height: 1.7;
+      line-height: 1.6;
     }
     .tech-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 28px;
     }
     .tech-card {
-      background: rgba(0, 0, 0, 0.3);
+      background: var(--bg-light);
       border: 1px solid var(--border-dim);
       border-radius: 24px;
-      padding: 25px 15px;
-      transition: 0.3s;
+      padding: 28px 16px;
+      transition: 0.25s;
     }
     .tech-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-5px);
+      border-color: var(--primary-light);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
     .tech-icon {
-      font-size: 2.8rem;
-      color: var(--accent);
-      margin-bottom: 15px;
+      font-size: 2.6rem;
+      color: var(--primary);
+      margin-bottom: 16px;
     }
     .tech-card h4 {
       font-size: 1.2rem;
+      font-weight: 700;
       margin-bottom: 8px;
+      color: var(--text-primary);
     }
     .tech-card p {
       font-size: 0.85rem;
-      color: #9aaec9;
+      color: var(--text-muted);
       margin: 0;
     }
 
-    /* Quality Assurance Banner */
+    /* Quality Assurance Banner - Light - Updated */
     .qa-banner {
-      background: #0a121f;
-      border-radius: 30px;
-      padding: 50px 40px;
+      background: white;
+      border-radius: 28px;
+      padding: 44px 48px;
       margin: 40px 0 60px;
       border: 1px solid var(--border-dim);
       display: flex;
@@ -283,139 +303,157 @@
       justify-content: space-between;
       align-items: center;
       gap: 30px;
+      box-shadow: var(--shadow-sm);
     }
     .qa-text h3 {
-      font-size: 1.8rem;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
-      margin-bottom: 12px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--primary);
+      margin-bottom: 10px;
     }
     .qa-text p {
-      color: #b4c4e0;
+      color: var(--text-secondary);
+      line-height: 1.6;
     }
     .btn-outline-accent {
       background: transparent;
-      border: 1px solid var(--accent);
-      color: white;
-      padding: 12px 32px;
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      padding: 11px 34px;
       border-radius: 40px;
       font-weight: 600;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.25s;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-size: 1rem;
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
       text-decoration: none;
     }
     .btn-outline-accent:hover {
-      background: var(--accent);
-      color: #000;
-      box-shadow: 0 0 15px var(--accent);
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.2);
     }
 
-    /* CTA Section */
+    /* CTA Section - Light - Updated */
     .cta-process {
       background: var(--card-bg);
-      border-radius: 30px;
-      padding: 55px 40px;
+      border-radius: 28px;
+      padding: 52px 40px;
       text-align: center;
-      margin: 40px 0 70px;
+      margin: 40px 0 80px;
       border: 1px solid var(--border-dim);
+      box-shadow: var(--shadow-sm);
     }
     .cta-process h3 {
       font-size: 1.8rem;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
-      margin-bottom: 15px;
+      font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--primary);
+      margin-bottom: 14px;
     }
     .cta-process p {
       color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto 25px;
+      max-width: 560px;
+      margin: 0 auto 24px;
     }
     .btn-primary {
-      background: var(--accent);
+      background: var(--primary);
       border: none;
-      padding: 14px 36px;
+      padding: 13px 36px;
       border-radius: 40px;
-      font-weight: 700;
-      font-size: 1rem;
-      color: #000;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: white;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.25s;
       display: inline-flex;
       align-items: center;
       gap: 10px;
       text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     .btn-primary:hover {
-      background: #fff;
-      box-shadow: 0 0 20px var(--accent);
+      background: var(--primary-dark);
       transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(30,58,138,0.2);
     }
 
-    /* ========== FOOTER (EXACT SAME AS ORIGINAL) ========== */
+    /* ========== FOOTER - DARK BLUE BACKGROUND, WHITE TEXT ========== */
     footer {
-      background: #03070f;
-      border-top: 1px solid rgba(0, 229, 255, 0.2);
-      padding: 60px 0 30px;
+      background: #0a2540;
+      border-top: 4px solid white;
+      padding: 56px 0 30px;
       margin-top: 20px;
+      color: #ffffff;
     }
     .footer-container {
       max-width: 1300px;
       margin: 0 auto;
       padding: 0 5%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 40px;
     }
     .footer-col h4 {
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
-      margin-bottom: 22px;
-      font-size: 1.3rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: white;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      border-left: 3px solid white;
+      padding-left: 12px;
     }
     .footer-col ul {
       list-style: none;
     }
     .footer-col li, .footer-col p {
       margin-bottom: 12px;
-      color: #a0afc3;
-      font-size: 0.9rem;
+      color: #e2e8f0;
+      font-size: 0.85rem;
+      font-weight: 400;
+      transition: 0.2s;
+    }
+    .footer-col li:hover {
+      color: #4BB8FA;
+      transform: translateX(4px);
     }
     .footer-col i {
       width: 28px;
-      color: var(--accent);
+      color: white;
     }
-    .footer-col .social-links {
+    .social-links {
       display: flex;
       gap: 18px;
       margin-top: 15px;
     }
     .social-links a {
-      color: #cbd5e6;
-      font-size: 1.6rem;
-      transition: 0.3s;
+      color: #e2e8f0;
+      font-size: 1.4rem;
+      transition: 0.2s;
     }
     .social-links a:hover {
-      color: var(--accent);
+      color: #4BB8FA;
+      transform: translateY(-2px);
     }
     .footer-bottom {
       text-align: center;
       padding-top: 40px;
       margin-top: 30px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      font-size: 0.85rem;
-      color: #7e8aa2;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.8rem;
+      color: #cbd5e1;
     }
 
     /* RESPONSIVE */
     @media (max-width: 992px) {
-      .process-hero-content h1 { font-size: 2.5rem; }
-      .step-item { flex-direction: column; }
-      .step-number { min-width: auto; padding: 20px 0; border-right: none; border-bottom: 1px solid var(--border-dim); }
-      .step-content { padding: 25px; }
+      .process-hero-content h1 { font-size: 2.4rem; }
+      .step-item { flex-direction: column; gap: 0; }
+      .step-number { min-width: auto; padding: 20px 0; border-right: none; border-bottom: 1px solid var(--border-dim); font-size: 2.5rem; }
+      .step-content { padding: 28px; }
       .tech-section { padding: 40px 25px; }
       .qa-banner { flex-direction: column; text-align: center; }
     }
@@ -428,43 +466,46 @@
         right: -100%;
         width: 280px;
         height: 100vh;
-        background: rgba(10, 18, 28, 0.98);
-        backdrop-filter: blur(20px);
+        background: white;
+        backdrop-filter: blur(0px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 28px;
-        transition: right 0.3s ease-in-out;
+        transition: right 0.3s ease;
         z-index: 1050;
-        border-left: 1px solid var(--accent);
+        border-left: 1px solid var(--border-dim);
+        box-shadow: -5px 0 20px rgba(0,0,0,0.05);
       }
       .nav-links.active { right: 0; }
       .nav-links li { width: 100%; text-align: center; }
-      .nav-links a { width: 80%; margin: 0 auto; padding: 12px; background: rgba(0, 229, 255, 0.1); }
+      .nav-links a { width: 80%; margin: 0 auto; padding: 12px; background: var(--bg-offwhite); border: none; }
       .menu-overlay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.6);
+        background: rgba(0,0,0,0.25);
         z-index: 1040;
         display: none;
       }
       .menu-overlay.active { display: block; }
-      .process-hero { margin-top: 70px; padding: 60px 0 40px; }
+      .process-hero { margin-top: 70px; padding: 55px 0 40px; }
       .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; }
-      .step-content h3 { font-size: 1.5rem; }
+      .step-content h3 { font-size: 1.4rem; }
       .tech-grid { grid-template-columns: 1fr 1fr; }
+      .footer-col h4 { border-left: none; text-align: center; }
     }
 
     @media (max-width: 550px) {
       .footer-container { grid-template-columns: 1fr; text-align: center; }
       .social-links { justify-content: center; }
-      .logo-text { font-size: 1.2rem; }
+      .logo-text { font-size: 1rem; }
       .logo-img { height: 34px; }
       .tech-grid { grid-template-columns: 1fr; }
       .step-tags { justify-content: center; }
+      .cta-process h3 { font-size: 1.5rem; }
     }
     a { text-decoration: none; }
     button { cursor: pointer; }
@@ -475,15 +516,14 @@
 <header>
   <nav>
     <div class="logo">
-      <img class="logo-img" src="img/seclogo.png" alt="Sherlock-X Logo" onerror="this.src='https://placehold.co/60x60/00e5ff/111?text=SX';">
-      <span class="logo-text">Case Vison</span>
+      <img class="logo-img" src="img/logo new.png" alt="Tele Secure Logo" onerror="this.src='https://placehold.co/48x48/1e3a8a/ffffff?text=TSI';">
+      <span class="logo-text">Tele Secure & Investigation (Pvt) Ltd</span>
     </div>
     <button class="menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="newhome.html">Home</a></li>
-      <li><a href="about.html">About US</a></li>
+      <li><a href="about.html">About Us</a></li>
       <li><a href="how.html" class="active">How We Investigate</a></li>
-      <!-- <li><a href="features.html">Features</a></li> -->
       <li><a href="contactUs.html">Contact Us</a></li>
       <li><a href="newfaq.html">FAQ</a></li>
     </ul>
@@ -491,53 +531,53 @@
   <div id="menuOverlay" class="menu-overlay"></div>
 </header>
 
-<!-- PROCESS HERO -->
+<!-- PROCESS HERO - Updated -->
 <section class="process-hero" id="process-main">
   <div class="container">
     <div class="process-hero-content">
       <h1>How We Investigate</h1>
-      <p>A disciplined, multi-layered forensic methodology — combining human intelligence, advanced digital forensics, and covert field operations to uncover the truth.</p>
+      <p>A professional, multi-layered investigation methodology — integrating field surveillance, digital forensics, and intelligence gathering to uncover the truth with absolute confidentiality and integrity.</p>
     </div>
   </div>
 </section>
 
 <div class="container">
-  <!-- Methodology Steps -->
+  <!-- Methodology Steps - Updated with client's investigation process -->
   <div class="methodology-steps">
     <!-- Step 1 -->
     <div class="step-item">
       <div class="step-number">01</div>
       <div class="step-content">
-        <h3>Intake & Threat Assessment</h3>
-        <p>Every investigation begins with a confidential consultation. We analyze your objectives, assess risk factors, and establish legal boundaries. A dedicated case manager outlines intelligence gaps and defines the scope — ensuring full compliance with local and international laws.</p>
-        <div class="step-tags"><span class="tag">NDA protection</span><span class="tag">Risk mapping</span><span class="tag">Legal review</span></div>
+        <h3>Confidential Consultation & Case Assessment</h3>
+        <p>Every investigation begins with a confidential, no-obligation consultation. We listen to your situation, assess the scope, and identify intelligence gaps. A dedicated case manager outlines legal boundaries, risk factors, and provides a transparent quote — all under strict NDA protection.</p>
+        <div class="step-tags"><span class="tag">100% Confidential</span><span class="tag">Free Quote</span><span class="tag">NDA Protection</span></div>
       </div>
     </div>
     <!-- Step 2 -->
     <div class="step-item">
       <div class="step-number">02</div>
       <div class="step-content">
-        <h3>OSINT & Digital Footprint Mapping</h3>
-        <p>Our analysts deploy proprietary AI crawlers, open-source intelligence (OSINT) tools, and deep-web monitors to gather digital breadcrumbs. We reconstruct online behavior, uncover hidden aliases, and map关联 networks across social media, forums, and encrypted platforms.</p>
-        <div class="step-tags"><span class="tag">Dark web monitoring</span><span class="tag">Metadata extraction</span><span class="tag">Link analysis</span></div>
+        <h3>Intelligence Gathering & Digital Tracing</h3>
+        <p>Our investigators deploy OSINT tools, digital forensics, and deep-web monitoring to gather evidence. We specialize in phone investigations, social media intelligence, electronic harassment detection, and digital footprint mapping — uncovering hidden connections and aliases.</p>
+        <div class="step-tags"><span class="tag">Phone Forensics</span><span class="tag">Social Media Intel</span><span class="tag">Dark Web Monitoring</span></div>
       </div>
     </div>
     <!-- Step 3 -->
     <div class="step-item">
       <div class="step-number">03</div>
       <div class="step-content">
-        <h3>Covert Field & Surveillance Operations</h3>
-        <p>When digital evidence isn't enough, our licensed field agents execute physical surveillance, asset tracking, and discreet interviews — using counter-surveillance techniques to remain undetected. We operate globally with real-time intelligence relay.</p>
-        <div class="step-tags"><span class="tag">GPS tracking</span><span class="tag">Undercover assets</span><span class="tag">Witness location</span></div>
+        <h3>Covert Surveillance & Field Operations</h3>
+        <p>When physical evidence is required, our licensed field agents conduct discreet surveillance, asset tracking, and witness interviews. With detectives in every district of Sri Lanka, we maintain operational integrity and counter-surveillance techniques nationwide.</p>
+        <div class="step-tags"><span class="tag">Nationwide Coverage</span><span class="tag">Asset Tracking</span><span class="tag">Witness Location</span></div>
       </div>
     </div>
     <!-- Step 4 -->
     <div class="step-item">
       <div class="step-number">04</div>
       <div class="step-content">
-        <h3>Digital Forensics & Evidence Recovery</h3>
-        <p>Our cyber lab performs data extraction from computers, mobile devices, cloud accounts, and IoT systems. We recover deleted files, bypass encryption (where legally authorized), and timestamp evidence using blockchain-secured chain-of-custody.</p>
-        <div class="step-tags"><span class="tag">Cellbrite UFED</span><span class="tag">Axiom Cyber</span><span class="tag">Blockchain hash</span></div>
+        <h3>Evidence Recovery & Documentation</h3>
+        <p>Our team performs forensic extraction from mobile devices, computers, and digital accounts. We recover deleted artifacts, document findings with chain-of-custody protocols, and ensure all evidence is preserved for legal or personal use — court-ready when required.</p>
+        <div class="step-tags"><span class="tag">Data Recovery</span><span class="tag">Chain of Custody</span><span class="tag">Court-Ready Evidence</span></div>
       </div>
     </div>
     <!-- Step 5 -->
@@ -545,59 +585,59 @@
       <div class="step-number">05</div>
       <div class="step-content">
         <h3>Analysis & Intelligence Synthesis</h3>
-        <p>Collected data is cross-referenced, analyzed by forensic experts, and fed into our AI pattern-recognition engine. We produce visual timelines, link charts, and behavior analysis — separating actionable intelligence from noise.</p>
-        <div class="step-tags"><span class="tag">AI behavioral modeling</span><span class="tag">Timeline reconstruction</span></div>
+        <p>Collected data is cross-referenced, analyzed by investigation experts, and processed for pattern recognition. We produce detailed reports, timeline reconstructions, and link analysis — transforming raw data into actionable intelligence for our clients.</p>
+        <div class="step-tags"><span class="tag">Link Analysis</span><span class="tag">Timeline Reconstruction</span><span class="tag">Behavioral Assessment</span></div>
       </div>
     </div>
     <!-- Step 6 -->
     <div class="step-item">
       <div class="step-number">06</div>
       <div class="step-content">
-        <h3>Confidential Reporting & Legal Advisory</h3>
-        <p>We deliver a comprehensive intelligence dossier via encrypted portal, including evidence exhibits, forensic logs, and strategic recommendations. Our reports are court-ready and can be presented as expert testimony if required.</p>
-        <div class="step-tags"><span class="tag">Court-ready format</span><span class="tag">Expert witness</span><span class="tag">24/7 client portal</span></div>
+        <h3>Confidential Delivery & Ongoing Support</h3>
+        <p>All evidence and reports are delivered via encrypted channels to your preferred contact method. We provide strategic recommendations and can offer expert testimony if required. Your case remains 100% confidential from start to finish.</p>
+        <div class="step-tags"><span class="tag">Encrypted Delivery</span><span class="tag">Expert Support</span><span class="tag">Lifetime Confidentiality</span></div>
       </div>
     </div>
   </div>
 
-  <!-- Technology & Tools Section -->
+  <!-- Technology & Tools Section - Updated with relevant services -->
   <div class="tech-section">
-    <h2>Cutting-Edge Forensic Technology</h2>
-    <p>We invest in elite-grade tools and proprietary systems to ensure no digital stone is left unturned. Our lab is certified for evidence integrity and chain-of-custody.</p>
+    <h2>Our Investigation Capabilities</h2>
+    <p>We leverage professional-grade tools and nationwide field expertise to deliver comprehensive investigative results — from digital forensics to physical surveillance.</p>
     <div class="tech-grid">
-      <div class="tech-card"><div class="tech-icon"><i class="fas fa-microchip"></i></div><h4>AI Pattern Recognition</h4><p>Deep learning models to detect anomalies & fraud clusters</p></div>
-      <div class="tech-card"><div class="tech-icon"><i class="fas fa-database"></i></div><h4>Forensic Data Extraction</h4><p>Recovery from damaged/encrypted drives & smartphones</p></div>
-      <div class="tech-card"><div class="tech-icon"><i class="fas fa-person"></i></div><h4>Social Network Mapping</h4><p>Visualizing hidden relationships & communication patterns</p></div>
-      <div class="tech-card"><div class="tech-icon"><i class="fas fa-fingerprint"></i></div><h4>Biometric & Image Forensics</h4><p>Facial recognition, tamper detection, and provenance analysis</p></div>
+      <div class="tech-card"><div class="tech-icon"><i class="fas fa-mobile-alt"></i></div><h4>Phone & Digital Forensics</h4><p>Mobile device extraction, call logs, message recovery, and electronic harassment detection.</p></div>
+      <div class="tech-card"><div class="tech-icon"><i class="fas fa-map-marked-alt"></i></div><h4>Nationwide Field Network</h4><p>Detectives in every district of Sri Lanka for rapid response and local intelligence.</p></div>
+      <div class="tech-card"><div class="tech-icon"><i class="fas fa-chart-line"></i></div><h4>Corporate Intelligence</h4><p>Due diligence, fraud investigations, employee misconduct, and business partner screening.</p></div>
+      <div class="tech-card"><div class="tech-icon"><i class="fas fa-user-secret"></i></div><h4>Surveillance Operations</h4><p>Covert monitoring, asset verification, missing person investigations, and relationship cases.</p></div>
     </div>
   </div>
 
-  <!-- Quality Assurance Banner -->
+  <!-- Quality Assurance Banner - Updated -->
   <div class="qa-banner">
     <div class="qa-text">
-      <h3><i class="fas fa-shield-alt"></i> Quality & Compliance</h3>
-      <p>All investigations follow ISO 27001 standards, GDPR/CCPA privacy frameworks, and strict chain-of-custody protocols. Our findings are defensible in any court.</p>
+      <h3><i class="fas fa-shield-alt" style="margin-right: 8px;"></i> Our Commitment to You</h3>
+      <p>We operate with strict confidentiality, ethical standards, and strategic analysis to uncover facts and protect our clients' interests. Every investigation follows our rigorous protocols — ensuring reliable, court-ready evidence and absolute discretion.</p>
     </div>
-    <a href="contactUs.html" class="btn-outline-accent"><i class="fas fa-file-contract"></i> Request methodology brochure</a>
+    <a href="contactUs.html" class="btn-outline-accent"><i class="fas fa-file-contract"></i> Request Confidential Quote</a>
   </div>
 
-  <!-- Final CTA -->
+  <!-- Final CTA - Updated -->
   <div class="cta-process">
-    <h3>Ready to start an investigation?</h3>
-    <p>Contact our intake team for a confidential, no-obligation consultation. We'll outline the investigative roadmap tailored to your case.</p>
-    <a href="contactUs.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Schedule confidential meeting</a>
+    <h3>Ready to start your investigation?</h3>
+    <p>Contact our confidential intake team for a free, no-obligation consultation. We'll outline the investigative roadmap tailored to your case — whether personal or corporate.</p>
+    <a href="contactUs.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Schedule Confidential Consultation</a>
   </div>
 </div>
 
-<!-- FOOTER (exact match) -->
+<!-- FOOTER - Dark Blue with Branding -->
 <footer>
   <div class="footer-container">
-    <div class="footer-col"><h4>Company</h4><ul><li><i class="fas fa-building"></i> About Us</li><li><i class="fas fa-cogs"></i> Services</li><li><i class="fas fa-envelope"></i> Contact</li><li><i class="fas fa-gavel"></i> Legal Notice</li></ul></div>
-    <div class="footer-col"><h4>Services</h4><ul><li><i class="fas fa-eye"></i> Surveillance & Fieldwork</li><li><i class="fas fa-search"></i> Digital Tracing</li><li><i class="fas fa-user-check"></i> Background Checks</li><li><i class="fas fa-briefcase"></i> Corporate Investigations</li></ul></div>
-    <div class="footer-col"><h4>Resources</h4><ul><li><i class="fas fa-file-alt"></i> Case Report Samples</li><li><i class="fas fa-upload"></i> Client Intake Forms</li><li><i class="fas fa-shield-alt"></i> Confidentiality Policy</li><li><i class="fas fa-blog"></i> Investigation Blog</li></ul></div>
-    <div class="footer-col"><h4>Follow Us</h4><div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-rocketchat"></i></a><a href="#"><i class="fas fa-newspaper"></i></a></div><p><i class="fas fa-lock"></i> Secure Chat: encrypted.sherlock-x</p><p><i class="fas fa-envelope-open-text"></i> Newsletter: subscribe for intel</p></div>
+    <div class="footer-col"><h4>Tele Secure & Investigation</h4><ul><li><i class="fas fa-building"></i> About Us</li><li><i class="fas fa-cogs"></i> Services</li><li><i class="fas fa-envelope"></i> Contact</li><li><i class="fas fa-gavel"></i> Legal Notice</li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><i class="fas fa-eye"></i> Private Investigations</li><li><i class="fas fa-chart-line"></i> Corporate Intelligence</li><li><i class="fas fa-shield-alt"></i> Security Consulting</li><li><i class="fas fa-database"></i> Evidence Collection</li><li><i class="fas fa-mobile-alt"></i> Phone & Digital Forensics</li></ul></div>
+    <div class="footer-col"><h4>Coverage</h4><ul><li><i class="fas fa-map-marker-alt"></i> Every District of Sri Lanka</li><li><i class="fas fa-clock"></i> 24/7 Emergency Response</li><li><i class="fas fa-user-shield"></i> Confidential & Ethical</li><li><i class="fas fa-phone-alt"></i> +94 77 123 4567</li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fas fa-envelope"></i></a></div></div>
   </div>
-  <div class="footer-bottom"><p>© 2026 SHERLOCK-X Investigation Platform | Modern Forensic & Crime Scene Technology | Absolute Confidentiality</p></div>
+  <div class="footer-bottom"><p>© 2026 Tele Secure & Investigation (Pvt) Ltd — Absolute Confidentiality | Professional Detective Services Across Sri Lanka</p></div>
 </footer>
 
 <script>

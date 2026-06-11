@@ -1,14 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Sherlock-X | FAQ – Forensic Intelligence</title>
+  <title>Tele Secure & Investigation | FAQ – Private Investigation Sri Lanka</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Professional Fonts: Inter + Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -21,45 +20,57 @@
       scroll-behavior: smooth;
     }
 
-    body {
-      background: #0a0f1c;
-      color: #ffffff;
-      font-family: 'Poppins', sans-serif;
-      overflow-x: hidden;
+    /* LIGHT THEME — PROFESSIONAL PALETTE */
+    :root {
+      --primary: #1e3a8a;        /* deep corporate blue */
+      --primary-dark: #0f2b6d;
+      --primary-light: #3b82f6;
+      --accent: #2563eb;          /* vibrant interactive accent */
+      --accent-glow: rgba(37, 99, 235, 0.12);
+      --card-bg: #ffffff;
+      --bg-light: #f8fafc;
+      --bg-offwhite: #f1f5f9;
+      --border-dim: #e2e8f0;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+      --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 16px 28px -10px rgba(0, 0, 0, 0.08);
     }
 
-    :root {
-      --accent: #00e5ff;
-      --accent-glow: rgba(0, 229, 255, 0.3);
-      --card-bg: #111a28;
-      --border-dim: rgba(255, 255, 255, 0.08);
-      --dark-bg: #050b12;
-      --text-secondary: #cbd5e1;
+    body {
+      background: var(--bg-light);
+      color: var(--text-primary);
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.5;
     }
 
     .container {
       width: 92%;
-      max-width: 1400px;
+      max-width: 1300px;
       margin: 0 auto;
     }
 
-    /* ========== NAVBAR (EXACT SAME AS ORIGINAL) ========== */
+    /* ========== NAVBAR - LIGHT PROFESSIONAL ========== */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(9, 15, 25, 0.95);
-      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-dim);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.02);
     }
 
     nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 5%;
+      padding: 14px 5%;
       max-width: 1600px;
       margin: auto;
     }
@@ -67,62 +78,61 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
     .logo-img {
-      height: 64px;
+      height: 44px;
       width: auto;
-      filter: drop-shadow(0 0 6px var(--accent));
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.05));
     }
     .logo-text {
-      font-size: 1.6rem;
+      font-size: 1.1rem;
       font-weight: 800;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
-      letter-spacing: 2px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--primary);
+      letter-spacing: -0.4px;
     }
 
     .nav-links {
       display: flex;
-      gap: 12px;
+      gap: 8px;
       list-style: none;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: #f1f5f9;
+      color: var(--text-primary);
       padding: 8px 20px;
       border-radius: 40px;
       font-weight: 500;
       font-size: 0.9rem;
-      background: rgba(255, 255, 255, 0.03);
-      transition: 0.3s;
+      transition: 0.2s;
+      background: transparent;
       border: 1px solid transparent;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: var(--accent);
-      color: #000;
-      border-color: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
+      background: var(--primary-light);
+      color: white;
+      border-color: var(--primary-light);
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
     }
 
     .menu-btn {
       display: none;
-      font-size: 1.8rem;
-      color: var(--accent);
+      font-size: 1.6rem;
+      color: var(--primary);
       background: none;
       border: none;
       cursor: pointer;
-      z-index: 1100;
     }
 
-    /* FAQ HERO */
+    /* FAQ HERO - LIGHT THEME - Updated */
     .faq-hero {
       margin-top: 80px;
-      background: linear-gradient(135deg, #0a0f1c 0%, #0c1625 100%);
-      padding: 80px 0 60px;
+      background: linear-gradient(105deg, #f1f5f9 0%, #ffffff 100%);
+      padding: 70px 0 50px;
       border-bottom: 1px solid var(--border-dim);
       position: relative;
       overflow: hidden;
@@ -130,11 +140,11 @@
     .faq-hero::before {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+      top: -40%;
+      right: -15%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(37,99,235,0.04) 0%, transparent 70%);
       border-radius: 50%;
     }
     .faq-hero-content {
@@ -145,100 +155,107 @@
       z-index: 2;
     }
     .faq-hero-content h1 {
-      font-size: 3.5rem;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
-      margin-bottom: 20px;
-      letter-spacing: 2px;
+      font-size: 3rem;
+      font-weight: 800;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--primary);
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
     }
     .faq-hero-content p {
-      color: #b0c4de;
-      font-size: 1.1rem;
-      line-height: 1.8;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      font-weight: 400;
     }
 
-    /* FAQ Categories */
+    /* FAQ Categories - LIGHT */
     .faq-categories {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
-      margin: 50px 0 40px;
+      gap: 14px;
+      margin: 48px 0 40px;
     }
     .cat-btn {
-      background: rgba(0, 229, 255, 0.05);
+      background: white;
       border: 1px solid var(--border-dim);
       padding: 10px 28px;
-      border-radius: 50px;
+      border-radius: 40px;
       font-weight: 500;
-      color: #ccddf8;
+      color: var(--text-primary);
       cursor: pointer;
-      transition: 0.3s;
-      font-size: 0.9rem;
+      transition: 0.2s;
+      font-size: 0.85rem;
+      font-family: 'Inter', sans-serif;
+      box-shadow: var(--shadow-sm);
     }
     .cat-btn i {
       margin-right: 8px;
-      color: var(--accent);
+      color: var(--primary-light);
     }
     .cat-btn.active, .cat-btn:hover {
-      background: var(--accent);
-      color: #000;
-      border-color: var(--accent);
-      box-shadow: 0 0 12px rgba(0,229,255,0.3);
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.2);
     }
     .cat-btn.active i, .cat-btn:hover i {
-      color: #000;
+      color: white;
     }
 
-    /* FAQ Accordion */
+    /* FAQ Accordion - Light Elegant - Updated with client questions */
     .faq-accordion {
       margin: 30px 0 70px;
     }
     .faq-item {
       background: var(--card-bg);
       border: 1px solid var(--border-dim);
-      border-radius: 24px;
+      border-radius: 20px;
       margin-bottom: 18px;
       transition: 0.2s;
       overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-item:hover {
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-md);
     }
     .faq-question {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 22px 28px;
+      padding: 20px 28px;
       cursor: pointer;
-      font-weight: 600;
-      font-size: 1.05rem;
       transition: 0.2s;
     }
     .faq-question h3 {
       font-size: 1rem;
       font-weight: 600;
-      letter-spacing: 0.3px;
-      color: #eef4ff;
+      color: var(--text-primary);
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: -0.2px;
     }
     .faq-question i {
-      color: var(--accent);
-      font-size: 1.3rem;
+      color: var(--primary);
+      font-size: 1.2rem;
       transition: transform 0.3s;
     }
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease-out, padding 0.2s;
+      transition: max-height 0.35s ease-out, padding 0.2s;
       padding: 0 28px;
       color: var(--text-secondary);
-      line-height: 1.7;
-      font-size: 0.95rem;
+      line-height: 1.65;
+      font-size: 0.92rem;
       border-top: 0px solid transparent;
     }
     .faq-item.active .faq-answer {
       max-height: 380px;
       padding: 0 28px 24px 28px;
-      border-top: 1px solid rgba(0,229,255,0.2);
+      border-top: 1px solid var(--border-dim);
     }
     .faq-item.active .faq-question i {
       transform: rotate(180deg);
@@ -247,104 +264,120 @@
       margin-top: 18px;
     }
 
-    /* Still Have Questions Section */
+    /* Still Have Questions - Light Version - Updated */
     .still-questions {
-      background: linear-gradient(145deg, #0c1320, #0a0f1c);
-      border-radius: 30px;
-      padding: 55px 40px;
+      background: white;
+      border-radius: 28px;
+      padding: 50px 40px;
       text-align: center;
-      margin: 40px 0 60px;
+      margin: 40px 0 70px;
       border: 1px solid var(--border-dim);
+      box-shadow: var(--shadow-sm);
     }
     .still-questions h3 {
       font-size: 1.8rem;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
-      margin-bottom: 15px;
+      font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--primary);
+      margin-bottom: 14px;
     }
     .still-questions p {
       color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto 25px;
+      max-width: 580px;
+      margin: 0 auto 22px;
+      font-size: 1rem;
     }
     .btn-outline-accent {
       background: transparent;
-      border: 1px solid var(--accent);
-      color: white;
-      padding: 12px 32px;
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      padding: 11px 34px;
       border-radius: 40px;
       font-weight: 600;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.25s;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-size: 1rem;
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
     }
     .btn-outline-accent:hover {
-      background: var(--accent);
-      color: #000;
-      box-shadow: 0 0 15px var(--accent);
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.2);
     }
 
-    /* ========== FOOTER (EXACT SAME AS ORIGINAL) ========== */
+    /* ========== FOOTER - DARK BLUE BACKGROUND, WHITE TEXT ========== */
     footer {
-      background: #03070f;
-      border-top: 1px solid rgba(0, 229, 255, 0.2);
-      padding: 60px 0 30px;
-      margin-top: 60px;
+      background: #0a2540;
+      border-top: 4px solid white;
+      padding: 56px 0 30px;
+      margin-top: 20px;
+      color: #ffffff;
     }
     .footer-container {
       max-width: 1300px;
       margin: 0 auto;
       padding: 0 5%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 40px;
     }
     .footer-col h4 {
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
-      margin-bottom: 22px;
-      font-size: 1.3rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: white;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      border-left: 3px solid white;
+      padding-left: 12px;
     }
     .footer-col ul {
       list-style: none;
     }
     .footer-col li, .footer-col p {
       margin-bottom: 12px;
-      color: #a0afc3;
-      font-size: 0.9rem;
+      color: #e2e8f0;
+      font-size: 0.85rem;
+      font-weight: 400;
+      transition: 0.2s;
+    }
+    .footer-col li:hover {
+      color: #4BB8FA;
+      transform: translateX(4px);
     }
     .footer-col i {
       width: 28px;
-      color: var(--accent);
+      color: white;
     }
-    .footer-col .social-links {
+    .social-links {
       display: flex;
       gap: 18px;
       margin-top: 15px;
     }
     .social-links a {
-      color: #cbd5e6;
-      font-size: 1.6rem;
-      transition: 0.3s;
+      color: #e2e8f0;
+      font-size: 1.4rem;
+      transition: 0.2s;
     }
     .social-links a:hover {
-      color: var(--accent);
+      color: #4BB8FA;
+      transform: translateY(-2px);
     }
     .footer-bottom {
       text-align: center;
       padding-top: 40px;
       margin-top: 30px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      font-size: 0.85rem;
-      color: #7e8aa2;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.8rem;
+      color: #cbd5e1;
     }
 
     /* RESPONSIVE */
     @media (max-width: 992px) {
-      .faq-hero-content h1 { font-size: 2.5rem; }
+      .faq-hero-content h1 { font-size: 2.4rem; }
     }
     @media (max-width: 768px) {
       .menu-btn { display: block; }
@@ -354,43 +387,46 @@
         right: -100%;
         width: 280px;
         height: 100vh;
-        background: rgba(10, 18, 28, 0.98);
-        backdrop-filter: blur(20px);
+        background: white;
+        backdrop-filter: blur(0px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 28px;
-        transition: right 0.3s ease-in-out;
+        transition: right 0.3s ease;
         z-index: 1050;
-        border-left: 1px solid var(--accent);
+        border-left: 1px solid var(--border-dim);
+        box-shadow: -5px 0 20px rgba(0,0,0,0.05);
       }
       .nav-links.active { right: 0; }
       .nav-links li { width: 100%; text-align: center; }
-      .nav-links a { width: 80%; margin: 0 auto; padding: 12px; background: rgba(0, 229, 255, 0.1); }
+      .nav-links a { width: 80%; margin: 0 auto; padding: 12px; background: var(--bg-offwhite); border: none; }
       .menu-overlay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.6);
+        background: rgba(0,0,0,0.25);
         z-index: 1040;
         display: none;
       }
       .menu-overlay.active { display: block; }
-      .faq-hero { margin-top: 70px; padding: 60px 0 40px; }
+      .faq-hero { margin-top: 70px; padding: 50px 0 40px; }
       .faq-question { padding: 18px 22px; }
       .faq-item.active .faq-answer { padding: 0 22px 20px 22px; }
       .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; }
       .still-questions { padding: 40px 25px; }
+      .footer-col h4 { border-left: none; text-align: center; }
     }
     @media (max-width: 550px) {
       .footer-container { grid-template-columns: 1fr; text-align: center; }
       .social-links { justify-content: center; }
-      .logo-text { font-size: 1.2rem; }
+      .logo-text { font-size: 1rem; }
       .logo-img { height: 34px; }
       .faq-categories { gap: 10px; }
-      .cat-btn { padding: 6px 18px; font-size: 0.8rem; }
+      .cat-btn { padding: 6px 18px; font-size: 0.75rem; }
+      .faq-hero-content h1 { font-size: 1.9rem; }
     }
     a { text-decoration: none; }
     button { cursor: pointer; }
@@ -401,15 +437,14 @@
 <header>
   <nav>
     <div class="logo">
-      <img class="logo-img" src="img/seclogo.png" alt="Sherlock-X Logo" onerror="this.src='https://placehold.co/60x60/00e5ff/111?text=SX';">
-      <span class="logo-text">Case Vison</span>
+      <img class="logo-img" src="img/logo new.png" alt="Tele Secure Logo" onerror="this.src='https://placehold.co/48x48/1e3a8a/ffffff?text=TSI';">
+      <span class="logo-text">Tele Secure & Investigation (Pvt) Ltd</span>
     </div>
     <button class="menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="newhome.html">Home</a></li>
-      <li><a href="about.html">About US</a></li>
+      <li><a href="about.html">About Us</a></li>
       <li><a href="how.html">How We Investigate</a></li>
-      <!-- <li><a href="#features">Features</a></li> -->
       <li><a href="contactUs.html">Contact Us</a></li>
       <li><a href="#faq-main" class="active">FAQ</a></li>
     </ul>
@@ -417,12 +452,12 @@
   <div id="menuOverlay" class="menu-overlay"></div>
 </header>
 
-<!-- FAQ HERO -->
+<!-- FAQ HERO - Updated -->
 <section class="faq-hero" id="faq-main">
   <div class="container">
     <div class="faq-hero-content">
       <h1>Frequently Asked Questions</h1>
-      <p>Answers to common inquiries about forensic investigations, confidentiality, process, and collaboration with Sherlock-X.</p>
+      <p>Clear answers about private investigations, confidentiality, our process, and how Tele Secure & Investigation delivers discreet intelligence with integrity across Sri Lanka.</p>
     </div>
   </div>
 </section>
@@ -434,112 +469,118 @@
     <button class="cat-btn" data-filter="general"><i class="fas fa-shield-alt"></i> General</button>
     <button class="cat-btn" data-filter="process"><i class="fas fa-search"></i> Investigation Process</button>
     <button class="cat-btn" data-filter="confidentiality"><i class="fas fa-lock"></i> Confidentiality</button>
-    <button class="cat-btn" data-filter="services"><i class="fas fa-cogs"></i> Services & Tech</button>
+    <button class="cat-btn" data-filter="services"><i class="fas fa-cogs"></i> Services & Coverage</button>
   </div>
 
-  <!-- FAQ Accordion -->
+  <!-- FAQ Accordion - Updated with client-specific content -->
   <div class="faq-accordion" id="faqAccordion">
     <!-- GENERAL CATEGORY -->
     <div class="faq-item" data-category="general">
       <div class="faq-question">
-        <h3><i class="fas fa-building" style="margin-right: 12px; color:var(--accent);"></i> What makes Sherlock-X different from other investigation firms?</h3>
+        <h3><i class="fas fa-building" style="margin-right: 12px; color:var(--primary-light);"></i> What makes Tele Secure & Investigation different from other agencies?</h3>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="faq-answer"><p>Sherlock-X combines classic detective methodology with advanced AI-driven forensics, global field agents, and military-grade encryption. We handle each case with absolute discretion, and our interdisciplinary team includes cyber experts, former intelligence analysts, and surveillance specialists. Over 98% case success rate and zero confidentiality breach in 20 years.</p></div>
+      <div class="faq-answer"><p>Tele Secure & Investigation (Pvt) Ltd is a trusted private investigation agency offering professional detective services with strict confidentiality, ethical standards, and strategic analysis. Our detectives are located in every district of Sri Lanka, ensuring nationwide coverage. We specialize in private investigations, financial investigations, electronic harassment, corporate investigations, and phone forensics — with a 100% confidentiality guarantee.</p></div>
     </div>
     <div class="faq-item" data-category="general">
       <div class="faq-question">
-        <h3><i class="fas fa-globe" style="margin-right: 12px; color:var(--accent);"></i> Do you operate internationally?</h3>
+        <h3><i class="fas fa-map-marker-alt" style="margin-right: 12px; color:var(--primary-light);"></i> Do you operate across all of Sri Lanka?</h3>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="faq-answer"><p>Yes. With partner offices in North America, Europe, Asia-Pacific, and the Middle East, we conduct cross-border investigations, asset tracing, and digital evidence retrieval in over 45 countries. Our network ensures rapid on-ground intelligence wherever needed.</p></div>
+      <div class="faq-answer"><p>Yes. We have detectives and field operatives in every district of Sri Lanka — from Colombo to Jaffna, Galle to Batticaloa, Kandy to Trincomalee. Our network ensures rapid on-ground intelligence and surveillance wherever you are.</p></div>
     </div>
 
     <!-- INVESTIGATION PROCESS -->
     <div class="faq-item" data-category="process">
       <div class="faq-question">
-        <h3><i class="fas fa-clipboard-list" style="margin-right: 12px; color:var(--accent);"></i> How does the investigation lifecycle work?</h3>
+        <h3><i class="fas fa-clipboard-list" style="margin-right: 12px; color:var(--primary-light);"></i> What is your investigation process?</h3>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="faq-answer"><p>We follow a 5‑stage protocol: (1) Confidential consultation & risk assessment, (2) Tailored strategy & forensic planning, (3) Covert data acquisition & field surveillance, (4) Evidence analysis & chain-of-custody, (5) Final intelligence report with legal advisory. Updates provided through secure channels.</p></div>
+      <div class="faq-answer"><p>We follow a structured 6‑stage protocol: (1) Confidential consultation & free quote, (2) Intelligence gathering & digital tracing, (3) Covert surveillance & field operations, (4) Evidence recovery & documentation, (5) Analysis & intelligence synthesis, (6) Confidential delivery via encrypted channel. Clients receive updates throughout the process with absolute discretion.</p></div>
     </div>
     <div class="faq-item" data-category="process">
       <div class="faq-question">
-        <h3><i class="fas fa-clock" style="margin-right: 12px; color:var(--accent);"></i> How long does an investigation take?</h3>
+        <h3><i class="fas fa-clock" style="margin-right: 12px; color:var(--primary-light);"></i> How long does a typical investigation take?</h3>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="faq-answer"><p>Timeline varies based on complexity. Basic background checks may take 3-5 business days; complex corporate espionage or digital forensic cases average 2-6 weeks. We provide realistic milestones and expedited options for urgent matters.</p></div>
+      <div class="faq-answer"><p>Timelines vary based on complexity. Standard background checks: 3–5 business days. Phone forensics and digital tracing: 5–7 days. Complex corporate fraud or missing person cases: 2–4 weeks. We provide realistic milestones and expedited options for urgent matters.</p></div>
     </div>
     
     <!-- CONFIDENTIALITY -->
     <div class="faq-item" data-category="confidentiality">
       <div class="faq-question">
-        <h3><i class="fas fa-user-secret" style="margin-right: 12px; color:var(--accent);"></i> Is my identity protected?</h3>
+        <h3><i class="fas fa-user-secret" style="margin-right: 12px; color:var(--primary-light);"></i> Is my identity and case kept confidential?</h3>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="faq-answer"><p>Absolutely. All client data is protected under NDA and GDPR/CCPA standards. We use end-to-end encrypted portals, anonymous case coding, and never share case details without explicit consent. Our reputation is built on discretion.</p></div>
+      <div class="faq-answer"><p>Absolutely. 100% confidentiality is our foundation. All client data is protected under strict NDAs. We use encrypted communication channels, anonymous case coding, and compartmentalized access. Our reputation is built on unwavering discretion — you can trust us.</p></div>
     </div>
     <div class="faq-item" data-category="confidentiality">
       <div class="faq-question">
-        <h3><i class="fas fa-file-signature" style="margin-right: 12px; color:var(--accent);"></i> Do you sign non-disclosure agreements?</h3>
+        <h3><i class="fas fa-file-signature" style="margin-right: 12px; color:var(--primary-light);"></i> Do you sign non-disclosure agreements?</h3>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="faq-answer"><p>Yes, NDAs are mandatory for every engagement. We provide a mutual confidentiality agreement before any case details are shared. You retain full ownership over all evidence and final reports.</p></div>
+      <div class="faq-answer"><p>Yes, NDAs are mandatory for every client engagement. We provide a mutual confidentiality agreement before any case details are exchanged. You retain complete ownership over all evidence, reports, and derived intelligence.</p></div>
     </div>
 
-    <!-- SERVICES & TECH -->
+    <!-- SERVICES & COVERAGE -->
     <div class="faq-item" data-category="services">
       <div class="faq-question">
-        <h3><i class="fas fa-microchip" style="margin-right: 12px; color:var(--accent);"></i> What technology does Sherlock-X use for digital forensics?</h3>
+        <h3><i class="fas fa-mobile-alt" style="margin-right: 12px; color:var(--primary-light);"></i> Do you offer phone investigation and digital forensics?</h3>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="faq-answer"><p>Our cyber lab utilizes proprietary AI pattern recognition, blockchain timestamping for evidence integrity, dark web crawlers, and advanced mobile forensics (Cellebrite, Axiom). We also conduct penetration testing and data recovery from encrypted drives.</p></div>
+      <div class="faq-answer"><p>Yes. We specialize in phone investigations, including data recovery from mobile devices, call log analysis, message extraction, social media intelligence, and electronic harassment detection. Our digital forensics team can recover deleted artifacts and trace digital footprints across platforms.</p></div>
     </div>
     <div class="faq-item" data-category="services">
       <div class="faq-question">
-        <h3><i class="fas fa-chart-line" style="margin-right: 12px; color:var(--accent);"></i> Can you assist with corporate pre-employment screening?</h3>
+        <h3><i class="fas fa-briefcase" style="margin-right: 12px; color:var(--primary-light);"></i> Can you assist with corporate investigations and due diligence?</h3>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="faq-answer"><p>Yes. We offer executive-level background verification, financial integrity checks, credential validation, and conflict of interest mapping – all compliant with local labor laws and privacy regulations.</p></div>
+      <div class="faq-answer"><p>Absolutely. We offer comprehensive corporate intelligence services: due diligence investigations, corporate fraud investigations, employee misconduct investigations, business partner background checks, and risk analysis — all conducted with discretion and compliance with local regulations.</p></div>
     </div>
     <div class="faq-item" data-category="services">
       <div class="faq-question">
-        <h3><i class="fas fa-hand-holding-usd" style="margin-right: 12px; color:var(--accent);"></i> How is pricing structured?</h3>
+        <h3><i class="fas fa-hand-holding-usd" style="margin-right: 12px; color:var(--primary-light);"></i> How is pricing structured for investigative services?</h3>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="faq-answer"><p>We offer transparent fixed-fee packages for standard services (background checks, asset tracing). For customized investigations, we provide a detailed quote after initial consultation. No hidden costs, and billing is itemized.</p></div>
+      <div class="faq-answer"><p>We provide transparent fixed-fee packages for standardized services (background checks, asset verification, phone forensics). For customized or complex investigations, we issue a detailed quote after the initial confidential consultation. No hidden fees — you approve the budget before we begin.</p></div>
     </div>
-    <!-- extra general to show filter -->
-    <div class="faq-item" data-category="general">
+    <div class="faq-item" data-category="services">
       <div class="faq-question">
-        <h3><i class="fas fa-chalkboard-user" style="margin-right: 12px; color:var(--accent);"></i> Do I need to be a corporation to hire Sherlock-X?</h3>
+        <h3><i class="fas fa-chalkboard-user" style="margin-right: 12px; color:var(--primary-light);"></i> Do I need to be a corporation to hire your services?</h3>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="faq-answer"><p>Not at all. We serve private individuals, legal firms, high-net-worth families, and corporations alike. Matters range from infidelity & missing persons to fraud and intellectual property theft.</p></div>
+      <div class="faq-answer"><p>Not at all. We serve private individuals, legal firms, businesses, and corporations alike. Case types range from missing persons, relationship investigations, and infidelity to fraud, electronic harassment, intellectual property theft, and corporate due diligence.</p></div>
+    </div>
+    <div class="faq-item" data-category="services">
+      <div class="faq-question">
+        <h3><i class="fas fa-file-alt" style="margin-right: 12px; color:var(--primary-light);"></i> Is the evidence you collect admissible in court?</h3>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer"><p>Yes. We follow strict chain-of-custody protocols and maintain thorough documentation for all evidence collected. Our reports are detailed, legally sound, and can be supported by expert testimony if required for litigation.</p></div>
     </div>
   </div>
 
-  <!-- Still have questions? CTA -->
+  <!-- Still have questions? CTA - Updated -->
   <div class="still-questions">
     <h3>Still have unanswered questions?</h3>
-    <p>Our intelligence liaison team is ready to provide confidential assistance and personalized answers.</p>
-    <a href="contact.html" class="btn-outline-accent"><i class="fas fa-comment-dots"></i> Contact our secure desk</a>
+    <p>Our confidential liaison team is ready to provide personalized answers tailored to your situation. Call, email, or use our secure contact form.</p>
+    <a href="contactUs.html" class="btn-outline-accent"><i class="fas fa-comment-dots"></i> Contact Our Secure Desk</a>
   </div>
 </div>
 
-<!-- FOOTER (exact match) -->
+<!-- FOOTER - Dark Blue with Branding -->
 <footer id="contact-footer">
   <div class="footer-container">
-    <div class="footer-col"><h4>Company</h4><ul><li><i class="fas fa-building"></i> About Us</li><li><i class="fas fa-cogs"></i> Services</li><li><i class="fas fa-envelope"></i> Contact</li><li><i class="fas fa-gavel"></i> Legal Notice</li></ul></div>
-    <div class="footer-col"><h4>Services</h4><ul><li><i class="fas fa-eye"></i> Surveillance & Fieldwork</li><li><i class="fas fa-search"></i> Digital Tracing</li><li><i class="fas fa-user-check"></i> Background Checks</li><li><i class="fas fa-briefcase"></i> Corporate Investigations</li></ul></div>
-    <div class="footer-col"><h4>Resources</h4><ul><li><i class="fas fa-file-alt"></i> Case Report Samples</li><li><i class="fas fa-upload"></i> Client Intake Forms</li><li><i class="fas fa-shield-alt"></i> Confidentiality Policy</li><li><i class="fas fa-blog"></i> Investigation Blog</li></ul></div>
-    <div class="footer-col"><h4>Follow Us</h4><div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-rocketchat"></i></a><a href="#"><i class="fas fa-newspaper"></i></a></div><p><i class="fas fa-lock"></i> Secure Chat: encrypted.sherlock-x</p><p><i class="fas fa-envelope-open-text"></i> Newsletter: subscribe for intel</p></div>
+    <div class="footer-col"><h4>Tele Secure & Investigation</h4><ul><li><i class="fas fa-building"></i> About Us</li><li><i class="fas fa-cogs"></i> Services</li><li><i class="fas fa-envelope"></i> Contact</li><li><i class="fas fa-gavel"></i> Legal Notice</li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><i class="fas fa-eye"></i> Private Investigations</li><li><i class="fas fa-chart-line"></i> Corporate Intelligence</li><li><i class="fas fa-shield-alt"></i> Security Consulting</li><li><i class="fas fa-database"></i> Evidence Collection</li><li><i class="fas fa-mobile-alt"></i> Phone & Digital Forensics</li></ul></div>
+    <div class="footer-col"><h4>Coverage</h4><ul><li><i class="fas fa-map-marker-alt"></i> Every District of Sri Lanka</li><li><i class="fas fa-clock"></i> 24/7 Emergency Response</li><li><i class="fas fa-user-shield"></i> Confidential & Ethical</li><li><i class="fas fa-phone-alt"></i> +94 77 123 4567</li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fas fa-envelope"></i></a></div></div>
   </div>
-  <div class="footer-bottom"><p>© 2026 SHERLOCK-X Investigation Platform | Modern Forensic & Crime Scene Technology | Absolute Confidentiality</p></div>
+  <div class="footer-bottom"><p>© 2026 Tele Secure & Investigation (Pvt) Ltd — Absolute Confidentiality | Professional Detective Services Across Sri Lanka</p></div>
 </footer>
 
 <script>
-  // Mobile navigation (fully preserved)
+  // Mobile navigation
   const menuBtn = document.getElementById('mobileMenuBtn');
   const navLinks = document.getElementById('navLinks');
   const overlayMenu = document.getElementById('menuOverlay');
@@ -548,11 +589,11 @@
   if(overlayMenu) overlayMenu.addEventListener('click', toggleMenu);
   document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => { if(navLinks.classList.contains('active')) toggleMenu(); }));
   
-  // Smooth scroll for anchors (internal consistency)
+  // smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
-      if(targetId === "#" || !targetId) return;
+      if(targetId === "#" || !targetId || targetId === "#faq-main") return;
       const target = document.querySelector(targetId);
       if(target) { e.preventDefault(); const offset = 80; const elementPos = target.getBoundingClientRect().top + window.scrollY - offset; window.scrollTo({ top: elementPos, behavior: 'smooth' }); }
     });
@@ -564,7 +605,6 @@
     const questionDiv = item.querySelector('.faq-question');
     questionDiv.addEventListener('click', () => {
       const isActive = item.classList.contains('active');
-      // Optional: close others? (better UX: allow multiple open but we close only clicked one's toggle)
       if(!isActive) {
         item.classList.add('active');
       } else {
@@ -590,7 +630,6 @@
         }
       }
     });
-    // ensure active class management
     catButtons.forEach(btn => {
       if(btn.getAttribute('data-filter') === category) {
         btn.classList.add('active');
@@ -607,7 +646,7 @@
     });
   });
   
-  // initially show all FAQ items, first open none
+  // initial: show all items
   filterFAQs('all');
 </script>
 </body>
