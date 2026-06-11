@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -154,7 +153,7 @@
       cursor: pointer;
     }
 
-    /* ========== HERO - SLIDESHOW RESPONSIVE (NO OVERLAY) ========== */
+    /* ========== HERO - CENTERED TEXT & CENTERED BUTTONS ========== */
     .hero {
       height: 100vh;
       min-height: 620px;
@@ -191,7 +190,18 @@
       z-index: 2;
     }
 
-    /* Responsive adjustments for slide images */
+    /* DARK OVERLAY - Improves text readability */
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.55) 100%);
+      z-index: 5;
+      pointer-events: none;
+    }
+
     @media (max-width: 768px) {
       .slide-item {
         background-position: center 30%;
@@ -201,82 +211,152 @@
         min-height: 100vh;
         height: 100vh;
       }
+      .hero-overlay {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+      }
     }
-
-    /* BLUE OVERLAY REMOVED - no overlay div at all */
     
+    /* Hero content - FULLY CENTERED (horizontal + vertical) for professional look */
     .hero-content {
       position: absolute;
       z-index: 10;
       top: 50%;
-      left: 6%;
-      transform: translateY(-50%);
-      max-width: 680px;
-      padding-right: 20px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 85%;
+      max-width: 900px;
+      text-align: center;
       background: transparent;
+      padding: 0 20px;
     }
 
-    /* Add a subtle text shadow to ensure readability against any image background */
+    /* Text styling with extra contrast - centered */
     .hero-content h1 {
-      font-size: 3.2rem;
+      font-size: 3.5rem;
       font-weight: 800;
       font-family: 'Plus Jakarta Sans', sans-serif;
       line-height: 1.2;
       margin-bottom: 20px;
       color: white;
       letter-spacing: -0.02em;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
     }
     .hero-content h1 span {
       color: #ffffff;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+      text-shadow: 0 2px 15px rgba(0,0,0,0.6);
       border-bottom: 3px solid var(--accent);
       display: inline-block;
       padding-bottom: 4px;
     }
     .hero-content p {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       line-height: 1.6;
       color: white;
-      margin-bottom: 32px;
+      margin-bottom: 35px;
       font-weight: 500;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.5);
     }
+
+    /* BUTTONS CONTAINER - NOW CENTERED BELOW TEXT */
+    .hero-buttons-wrapper {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
     .btn {
-      padding: 12px 30px;
-      font-size: 0.95rem;
+      padding: 14px 36px;
+      font-size: 1rem;
       font-weight: 600;
-      border-radius: 40px;
+      border-radius: 50px;
       cursor: pointer;
-      transition: all 0.25s ease;
+      transition: all 0.3s ease;
       border: none;
       font-family: 'Inter', sans-serif;
+      letter-spacing: 0.3px;
     }
     .primary-btn {
       background: white;
       color: var(--primary);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
     }
     .primary-btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       background: #f8fafc;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
     .secondary-btn {
       background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(6px);
       border: 1.5px solid white;
       color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
     .secondary-btn:hover {
       background: white;
       color: var(--primary);
       border-color: white;
+      transform: translateY(-3px);
     }
-    .hero-btns {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
+
+    /* Responsive adjustments for centered text & centered buttons */
+    @media (max-width: 992px) {
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+        max-width: 600px;
+        margin-bottom: 30px;
+      }
+      .btn {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .btn {
+        padding: 10px 24px;
+        font-size: 0.85rem;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+        margin-bottom: 25px;
+      }
+      .hero-content {
+        width: 92%;
+      }
+      .hero-buttons-wrapper {
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .btn {
+        padding: 8px 20px;
+        font-size: 0.75rem;
+      }
+      .hero-content h1 {
+        font-size: 1.5rem;
+      }
+      .hero-content p {
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+      }
+      .hero-buttons-wrapper {
+        gap: 12px;
+      }
     }
 
     /* Ticker */
@@ -545,11 +625,15 @@
       border: 1px solid var(--border-dim);
       text-align: center;
       box-shadow: var(--shadow-sm);
+      margin-bottom: 60px;
     }
     .contact-card h2 {
       color: var(--primary);
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 700;
+    }
+    .contact-card input, .contact-card textarea {
+      width: 100%;
     }
 
     /* FOOTER */
@@ -620,13 +704,10 @@
 
     @media (max-width: 992px) {
       .about-grid { grid-template-columns: 1fr; gap: 35px; }
-      .hero-content h1 { font-size: 2.5rem; }
       .consultation-showcase { flex-direction: column; gap: 40px; }
       .consultation-text { text-align: center; }
     }
     @media (max-width: 768px) {
-      .hero-content { left: 6%; top: 55%; width: 90%; }
-      .hero-content h1 { font-size: 1.8rem; }
       .menu-btn { display: block; }
       .nav-links {
         position: fixed;
@@ -664,8 +745,6 @@
       .footer-container { grid-template-columns: 1fr; text-align: center; }
       .social-links { justify-content: center; }
       .logo-text { font-size: 1rem; }
-      .hero-content h1 { font-size: 1.4rem; }
-      .btn { padding: 8px 20px; font-size: 0.8rem; }
       .footer-col h4 { border-left: none; text-align: center; }
     }
     a { text-decoration: none; }
@@ -691,19 +770,23 @@
   <div id="menuOverlay" class="menu-overlay"></div>
 </header>
 
-<!-- HERO SECTION WITH TIMED SLIDESHOW - BLUE OVERLAY REMOVED -->
+<!-- HERO SECTION: FULLY CENTERED TEXT + CENTERED BUTTONS -->
 <section class="hero">
   <div class="slideshow-container" id="heroSlideshow">
-    <div class="slide-item" style="background-image: url('https://i.pinimg.com/736x/eb/ad/db/ebaddb5360045167c1becdc27be7cf07.jpg');"></div>
-    <div class="slide-item" style="background-image: url('https://i.pinimg.com/1200x/8d/db/12/8ddb12b943246f4538aefbff75fb3f83.jpg');"></div>
-    <div class="slide-item" style="background-image: url('https://i.pinimg.com/1200x/b3/e8/b1/b3e8b149cf69d1497f7c9f27f50fef70.jpg');"></div>
-    <div class="slide-item" style="background-image: url('https://i.pinimg.com/736x/0f/90/2d/0f902debbee153318db30dfaf0c145ee.jpg');"></div>
+    <div class="slide-item" style="background-image: url('https://i.pinimg.com/1200x/b0/09/ba/b009ba64416c0aa35e1d6945122b114d.jpg');"></div>
+    <div class="slide-item" style="background-image: url('https://gicagency.com/wp-content/uploads/2024/06/Hire-a-private-investigator-1.jpg');"></div>
+    <div class="slide-item" style="background-image: url('https://i.pinimg.com/1200x/b1/4f/0b/b14f0b06227bddd902d929cdcb69530f.jpg');"></div>
   </div>
-  <!-- Overlay div completely removed -->
+  <!-- Dark gradient overlay for text readability -->
+  <div class="hero-overlay"></div>
+  
+  <!-- Centered text and buttons wrapper -->
   <div class="hero-content">
     <h1>Tele Secure & <span>Investigation</span><br>Discreet Intelligence Solutions</h1>
     <p>When information matters, precision and confidentiality are everything. Trusted private investigation agency serving individuals, businesses, and legal professionals across Sri Lanka — 24/7.</p>
-    <div class="hero-btns">
+    
+    <!-- Buttons now centered below the text -->
+    <div class="hero-buttons-wrapper">
       <button class="btn primary-btn" onclick="document.getElementById('contact-card').scrollIntoView({behavior:'smooth'})">Request Consultation</button>
       <button class="btn secondary-btn" onclick="document.getElementById('services-section').scrollIntoView({behavior:'smooth'})">Our Services</button>
     </div>
@@ -743,114 +826,54 @@
       <p>We are a trusted private investigation agency offering a wide range of professional detective services to meet your needs. Whether you're looking for a private investigator, need help with a phone investigation, or require private surveillance, our team of experienced local private investigators is ready to assist. Whatever the case, we can help.</p>
       <p>We specialize in a variety of cases, including private investigations, financial investigations, electronic harassment, and corporate investigations. Our detectives are in every district of Sri Lanka. We operate with strict confidentiality, ethical standards, and strategic analysis to uncover facts and protect our clients' interests.</p>
       <button class="btn primary-btn" onclick="document.getElementById('contact-card').scrollIntoView({behavior:'smooth'})">Request Confidential Consultation</button>
-      <div style="margin-top: 20px;">
-        <i class="fas fa-"></i>  
-        <i class="fas fa-"></i> </div>
-      </div>
-      <div class="about-image">
-        <img src="https://www.makrosafe.co.za/php/lib/fit_image.php?width=1140&height=642&mode=fit&y=0&x=0&image_path=/uploads/5d41402ab43db971xjS7Ynsf/html_blobs_media/Root_Cause_Analysis_Incident_Investigation.jpg" alt="forensic investigation team">
-      </div>
+      <div style="margin-top: 20px;"><i class="fas fa-envelope"></i> info@telesecure.lk &nbsp;&nbsp; <i class="fas fa-phone-alt"></i> +94 77 123 4567</div>
     </div>
-  </section>
+    <div class="about-image">
+      <img src="https://www.makrosafe.co.za/php/lib/fit_image.php?width=1140&height=642&mode=fit&y=0&x=0&image_path=/uploads/5d41402ab43db971xjS7Ynsf/html_blobs_media/Root_Cause_Analysis_Incident_Investigation.jpg" alt="forensic investigation team">
+    </div>
+  </div>
+</section>
 
 <!-- TESTIMONIALS -->
 <section id="testimonials" class="testimonials-section" style="padding: 80px 0 40px 0;">
   <div class="container">
-    <div class="section-title">
-      <h2>Client Feedback</h2>
-      <p>Trusted by leading professionals and private clients across Sri Lanka</p>
-    </div>
-    <div class="swiper testimonialSwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="testimonial-slide">
-            <img class="client-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="client">
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="client-name">R. Kumarasinghe</div>
-            <div class="client-title">Corporate Legal Advisor</div>
-            <p class="client-feedback">“Tele Secure handled our corporate due diligence with absolute discretion and delivered detailed, actionable intelligence within days. Highly professional.”</p>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="testimonial-slide">
-            <img class="client-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="client">
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="client-name">M. Jayawardena</div>
-            <div class="client-title">Private Client</div>
-            <p class="client-feedback">“Their surveillance and evidence collection were flawless. I received a comprehensive report that resolved my matter quickly.”</p>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="testimonial-slide">
-            <img class="client-avatar" src="https://randomuser.me/api/portraits/women/45.jpg" alt="client">
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="client-name">Dr. S. Perera</div>
-            <div class="client-title">Business Owner</div>
-            <p class="client-feedback">“Phone forensic investigation saved my business from internal fraud. Thank you for the integrity and speed.”</p>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="testimonial-slide">
-            <img class="client-avatar" src="https://randomuser.me/api/portraits/men/91.jpg" alt="client">
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <div class="client-name">N. Fernando</div>
-            <div class="client-title">Security Consultant</div>
-            <p class="client-feedback">“Nationwide coverage and absolute confidentiality. They are the go-to investigation agency in Sri Lanka.”</p>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
+    <div class="section-title"><h2>Client Feedback</h2><p>Trusted by leading professionals and private clients across Sri Lanka</p></div>
+    <div class="swiper testimonialSwiper"><div class="swiper-wrapper"><div class="swiper-slide"><div class="testimonial-slide"><img class="client-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="client"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="client-name">R. Kumarasinghe</div><div class="client-title">Corporate Legal Advisor</div><p class="client-feedback">“Tele Secure handled our corporate due diligence with absolute discretion and delivered detailed, actionable intelligence within days. Highly professional.”</p></div></div><div class="swiper-slide"><div class="testimonial-slide"><img class="client-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="client"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="client-name">M. Jayawardena</div><div class="client-title">Private Client</div><p class="client-feedback">“Their surveillance and evidence collection were flawless. I received a comprehensive report that resolved my matter quickly.”</p></div></div><div class="swiper-slide"><div class="testimonial-slide"><img class="client-avatar" src="https://randomuser.me/api/portraits/women/45.jpg" alt="client"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="client-name">Dr. S. Perera</div><div class="client-title">Business Owner</div><p class="client-feedback">“Phone forensic investigation saved my business from internal fraud. Thank you for the integrity and speed.”</p></div></div><div class="swiper-slide"><div class="testimonial-slide"><img class="client-avatar" src="https://randomuser.me/api/portraits/men/91.jpg" alt="client"><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><div class="client-name">N. Fernando</div><div class="client-title">Security Consultant</div><p class="client-feedback">“Nationwide coverage and absolute confidentiality. They are the go-to investigation agency in Sri Lanka.”</p></div></div></div><div class="swiper-pagination"></div></div>
   </div>
 </section>
 
 <!-- CONSULTATION SHOWCASE -->
 <div class="container">
   <div class="consultation-showcase">
-    <div class="consultation-image">
-      <img src="https://i.pinimg.com/1200x/7a/69/4e/7a694ee045fa319a635905cac0cc6b1d.jpg" alt="confidential consultation">
-    </div>
-    <div class="consultation-text">
-      <h2>Need a Private Detective or Digital Investigator?</h2>
-      <p>We offer tailored solutions for everything from missing person cases to fraud investigations and electronic harassment. Our team understands the importance of confidentiality, so you can trust us. With detectives in every district of Sri Lanka, we're always nearby.</p>
-      <a href="contactUs.html" class="btn-outline-accent">
-        <i class="fas fa-calendar-check"></i> Request a Confidential Consultation
-      </a>
-    </div>
+    <div class="consultation-image"><img src="https://i.pinimg.com/1200x/7a/69/4e/7a694ee045fa319a635905cac0cc6b1d.jpg" alt="confidential consultation"></div>
+    <div class="consultation-text"><h2>Need a Private Detective or Digital Investigator?</h2><p>We offer tailored solutions for everything from missing person cases to fraud investigations and electronic harassment. Our team understands the importance of confidentiality, so you can trust us. With detectives in every district of Sri Lanka, we're always nearby.</p><a href="contactUs.html" class="btn-outline-accent"><i class="fas fa-calendar-check"></i> Request a Confidential Consultation</a></div>
   </div>
 </div>
 
+<!-- CONTACT CARD -->
+<section id="contact-card" style="padding-top: 0;">
+  <div class="container">
+    <div class="contact-card">
+      <h2>Request a Confidential Consultation</h2>
+      <p>Complete the form below or reach out directly — all details remain 100% confidential. Our team will respond within 2 hours.</p>
+      <form id="consultForm" style="max-width: 600px; margin: 30px auto 0; display: flex; flex-direction: column; gap: 15px;">
+        <input type="text" id="fullName" placeholder="Full Name *" required style="padding: 14px 18px; border-radius: 60px; border:1px solid var(--border-dim);">
+        <input type="email" id="email" placeholder="Email Address *" required style="padding: 14px 18px; border-radius: 60px;">
+        <input type="tel" id="phone" placeholder="Phone Number" style="padding: 14px 18px; border-radius: 60px;">
+        <textarea rows="3" placeholder="Brief description of your case (optional)" style="border-radius: 24px; padding: 14px; border:1px solid var(--border-dim);"></textarea>
+        <button type="submit" class="btn primary-btn" style="background: var(--primary); color: white; width: fit-content; margin: 0 auto;">Send Secure Request <i class="fas fa-paper-plane"></i></button>
+      </form>
+      <div id="formFeedback" style="margin-top: 20px;"></div>
+      <div style="margin-top: 25px;"><i class="fas fa-envelope"></i> info@telesecure.lk &nbsp;|&nbsp; <i class="fas fa-phone-alt"></i> +94 77 123 4567 &nbsp;|&nbsp; <i class="fas fa-lock"></i> 24/7 Confidential Line</div>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer><div class="footer-container"><div class="footer-col"><h4>Tele Secure & Investigation</h4><ul><li><i class="fas fa-building"></i> About Us</li><li><i class="fas fa-cogs"></i> Services</li><li><i class="fas fa-envelope"></i> Contact</li><li><i class="fas fa-gavel"></i> Legal Notice</li></ul></div><div class="footer-col"><h4>Services</h4><ul><li><i class="fas fa-eye"></i> Private Investigations</li><li><i class="fas fa-chart-line"></i> Corporate Intelligence</li><li><i class="fas fa-shield-alt"></i> Security Consulting</li><li><i class="fas fa-database"></i> Evidence Collection</li><li><i class="fas fa-mobile-alt"></i> Phone Forensics</li></ul></div><div class="footer-col"><h4>Coverage</h4><ul><li><i class="fas fa-map-marker-alt"></i> Every district of Sri Lanka</li><li><i class="fas fa-clock"></i> 24/7 Emergency Response</li><li><i class="fas fa-user-shield"></i> Confidential & Ethical</li><li><i class="fas fa-phone-alt"></i> +94 77 123 4567</li></ul></div><div class="footer-col"><h4>Connect</h4><div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fas fa-envelope"></i></a></div></div></div><div class="footer-bottom"><p>© 2026 Tele Secure & Investigation (Pvt) Ltd — Absolute Confidentiality | Professional Detective Services Across Sri Lanka</p></div></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  // MOBILE MENU TOGGLE
   const menuBtn = document.getElementById('mobileMenuBtn');
   const navLinks = document.getElementById('navLinks');
   const overlayMenu = document.getElementById('menuOverlay');
@@ -859,7 +882,6 @@
   if(overlayMenu) overlayMenu.addEventListener('click', toggleMenu);
   document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => { if(navLinks.classList.contains('active')) toggleMenu(); }));
 
-  // SMOOTH SCROLL FOR ANCHOR LINKS
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
@@ -869,7 +891,6 @@
     });
   });
 
-  // TESTIMONIALS SWIPER
   const swiper = new Swiper('.testimonialSwiper', {
     loop: true, autoplay: { delay: 4800, disableOnInteraction: false },
     pagination: { el: '.swiper-pagination', clickable: true },
@@ -877,33 +898,13 @@
     spaceBetween: 28,
   });
 
-  // HERO SLIDESHOW (TIME-BASED CROSSFADE)
   const slides = document.querySelectorAll('.slide-item');
   let currentSlide = 0;
-  const slideInterval = 5000; // 5 seconds per image
+  const slideInterval = 5000;
+  function showSlide(index) { slides.forEach((slide, i) => { if (i === index) slide.classList.add('active'); else slide.classList.remove('active'); }); }
+  function nextSlide() { currentSlide = (currentSlide + 1) % slides.length; showSlide(currentSlide); }
+  if (slides.length > 0) { showSlide(0); setInterval(nextSlide, slideInterval); }
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      if (i === index) {
-        slide.classList.add('active');
-      } else {
-        slide.classList.remove('active');
-      }
-    });
-  }
-
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }
-
-  // Initialize first slide visible and start timer
-  if (slides.length > 0) {
-    showSlide(0);
-    setInterval(nextSlide, slideInterval);
-  }
-
-  // FORM SUBMISSION HANDLER
   document.getElementById('consultForm')?.addEventListener('submit', function(e){ e.preventDefault(); document.getElementById('formFeedback').innerHTML = '<div style="background:#eef2ff; padding:12px; border-radius:60px;"><i class="fas fa-check-circle"></i> Your confidential request has been received. A licensed investigator will contact you within 2 hours via encrypted channel.</div>'; this.reset(); setTimeout(()=>{document.getElementById('formFeedback').innerHTML='';},5000); });
 </script>
 </body>
